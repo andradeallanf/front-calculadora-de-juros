@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import Calculadora from './components/Calculadora';
+import { AppProvider } from './context/AppContext';
+import Notifications from './components/Notifications/Notifications';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <div className="App">
+        <Notifications />
+        <LoadingSpinner />
+        <Calculadora />
+      </div>
+    </AppProvider>
   );
 }
 
