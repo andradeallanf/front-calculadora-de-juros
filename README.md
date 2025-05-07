@@ -1,46 +1,133 @@
-# Getting Started with Create React App
+# Calculadora de Empréstimos - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é uma aplicação frontend para uma calculadora de empréstimos, desenvolvida com React e TypeScript. A aplicação permite aos usuários calcular parcelas de empréstimos com base em diferentes parâmetros.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Cálculo de empréstimos com base em:
+  - Data inicial
+  - Data final
+  - Data do primeiro pagamento
+  - Valor do empréstimo
+  - Taxa de juros
+- Exibição detalhada dos resultados em uma tabela
+- Formatação de valores monetários e percentuais
+- Validação de formulários
+- Notificações de sucesso e erro
+- Indicador de carregamento durante operações assíncronas
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React 19
+- TypeScript
+- Axios para requisições HTTP
+- date-fns para manipulação de datas
+- CSS para estilização
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Pré-requisitos
 
-### `npm test`
+- Node.js (versão 16 ou superior)
+- npm ou yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalação
 
-### `npm run build`
+1. Clone o repositório:
+   ```bash
+   git clone [URL_DO_REPOSITORIO]
+   cd app-calculadora
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Configuração
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A aplicação utiliza uma API backend para realizar os cálculos. Por padrão, a API é esperada em `http://localhost:8080`. Você pode configurar um endereço diferente criando um arquivo `.env.local` na raiz do projeto:
 
-### `npm run eject`
+```
+REACT_APP_API_URL=http://seu-backend-url
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Execução
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para iniciar a aplicação em modo de desenvolvimento:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+# ou
+yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Build para Produção
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para criar uma versão otimizada para produção:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+# ou
+yarn build
+```
+
+Os arquivos serão gerados na pasta `build`.
+
+## Estrutura do Projeto
+
+```
+src/
+├── components/           # Componentes React
+│   ├── Calculadora/      # Componente principal da calculadora
+│   ├── LoadingSpinner/   # Componente de indicador de carregamento
+│   └── Notifications/    # Sistema de notificações
+├── context/              # Contextos React
+│   └── AppContext.tsx    # Contexto global da aplicação
+├── models/               # Interfaces e tipos
+│   └── calculadora.model.ts
+├── services/             # Serviços para comunicação com a API
+│   └── calculadora.service.ts
+├── utils/                # Funções utilitárias
+│   └── formatters.ts     # Formatadores de números, datas, etc.
+├── App.tsx               # Componente raiz
+└── index.tsx             # Ponto de entrada
+```
+
+## Funcionalidades Detalhadas
+
+### Formatação de Valores
+
+A aplicação utiliza formatadores personalizados para:
+- Valores monetários (com separadores de milhar e vírgula para decimais)
+- Percentuais (com suporte para valores fracionários)
+- Datas (no formato local)
+
+### Validação de Formulários
+
+O formulário valida:
+- Preenchimento de todos os campos obrigatórios
+- Valores numéricos positivos
+- Lógica de datas (data final posterior à inicial, etc.)
+
+### Sistema de Notificações
+
+A aplicação inclui um sistema de notificações que exibe mensagens de:
+- Sucesso (verde)
+- Erro (vermelho)
+- Informação (azul)
+- Alerta (amarelo)
+
+## Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Faça commit das suas alterações (`git commit -m 'Adiciona nova feature'`)
+4. Faça push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para detalhes.
