@@ -1,8 +1,8 @@
 import React from 'react';
-import Calculadora from './components/Calculadora';
+import CalculadoraPage from './components/calculadora-page/CalculadoraPage';
 import { AppProvider } from './context/AppContext';
-import Notifications from './components/Notifications/Notifications';
-import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
+import Notifications from './components/notification/Notifications';
+import LoadingSpinner from './components/loading-spinner/LoadingSpinner';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <Notifications />
         <LoadingSpinner />
-        <Calculadora />
+        <CalculadoraPage />
       </div>
     </AppProvider>
   );

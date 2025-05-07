@@ -1,0 +1,115 @@
+/* Tabela de resultados */
+.results-grid {
+  overflow-x: auto;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.results-grid table {
+  width: 100%;
+  table-layout: auto; /* Permite que as colunas se ajustem ao conteúdo */
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 1000px;
+  font-size: 13px;
+}
+
+.results-grid th,
+.results-grid td {
+  padding: 8px 10px;
+  text-align: right;
+  border: 1px solid #ddd;
+  position: relative;
+  word-wrap: break-word;
+  min-width: 100px; /* Garante uma largura mínima para cada coluna */
+}
+
+.results-grid th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
+
+.results-grid tr:last-child td {
+  border-bottom: none;
+}
+
+.results-grid .group-header {
+  background-color: #3a7ab7;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  white-space: normal;
+  word-wrap: break-word;
+  padding: 10px 5px;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.results-grid .sub-header {
+  background-color: #3a7ab7;
+  font-size: 0.85em;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  padding: 8px 5px;
+  height: auto;
+  line-height: 1.2;
+}
+
+.results-grid .even-row {
+  background-color: #fff;
+}
+
+.results-grid .odd-row {
+  background-color: #f9f9f9;
+}
+
+/* Efeito hover nas linhas */
+.results-grid tr:hover {
+  background-color: #f0f7ff;
+}
+
+/* Mensagem quando não há resultados */
+.no-results {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Coluna de consolidada */
+.consolidada-cell {
+  text-align: center;
+}
+
+/* Células numéricas */
+.numeric-cell {
+  text-align: right;
+  font-family: 'Poppins', sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Data cell */
+.date-cell {
+  white-space: nowrap;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .results-grid {
+    font-size: 12px;
+  }
+
+  .results-grid th,
+  .results-grid td {
+    padding: 8px 5px;
+  }
+}

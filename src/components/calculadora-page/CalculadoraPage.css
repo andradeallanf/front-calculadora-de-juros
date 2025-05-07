@@ -1,0 +1,40 @@
+/* Estilos gerais */
+.calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+h1 {
+  text-align: left;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* Espaçamento para o formulário */
+.form-container {
+  margin-bottom: 20px;
+}
+
+/* Espaçamento para a tabela de resultados */
+.results-grid {
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .calculator-container {
+    padding: 10px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .results-grid {
+    margin-top: 15px;
+  }
+}

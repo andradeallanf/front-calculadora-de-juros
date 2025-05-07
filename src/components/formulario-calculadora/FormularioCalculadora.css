@@ -1,0 +1,149 @@
+/* Container de entrada de dados */
+.form-container {
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.input-field {
+  flex: 1;
+  min-width: 150px;
+  max-width: calc(20% - 12px); /* 5 campos com espaçamento */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-field label {
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: #555;
+  font-size: 14px;
+}
+
+.input-field input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 38px;
+  width: 100%;
+}
+
+.input-field input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 3px rgba(0, 102, 204, 0.3);
+}
+
+/* Estilos para campos com erro */
+.input-field.error label {
+  color: #e53935;
+}
+
+.input-field .error-input,
+.input-field.error input {
+  border-color: #e53935;
+  background-color: #ffebee;
+}
+
+.input-field .error-input:focus,
+.input-field.error input:focus {
+  border-color: #e53935;
+  box-shadow: 0 0 3px rgba(229, 57, 53, 0.3);
+}
+
+.input-field .error-message {
+  color: #e53935;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+/* Estilos para campo com sufixo (%) */
+.input-with-suffix {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-suffix input {
+  padding-right: 25px; /* Espaço para o sufixo */
+}
+
+.input-suffix {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 14px;
+  pointer-events: none; /* Permite clicar através do sufixo */
+}
+
+/* Contêiner do botão */
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Botão de calcular */
+.calculate-btn {
+  background-color: #ccc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  height: 38px;
+  min-width: 100px;
+  width: 100%;
+}
+
+.calculate-btn:hover {
+  background-color: #b3b3b3;
+}
+
+.calculate-btn:not(:disabled) {
+  background-color: #0066cc;
+}
+
+.calculate-btn:not(:disabled):hover {
+  background-color: #0055aa;
+}
+
+.calculate-btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .input-field {
+    max-width: calc(33.33% - 10px); /* 3 campos por linha em tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-field {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .calculate-btn {
+    width: 100%;
+    margin-top: 15px;
+    align-self: center;
+  }
+}
